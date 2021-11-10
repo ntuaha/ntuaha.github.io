@@ -1,8 +1,7 @@
 <!doctype html>
 <html>
-
 <head>
-    <title> Aha's talks </title>
+    <title> Aha's specification </title>
     <meta charset="utf-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -20,19 +19,19 @@
         gtag('config', 'G-6NHTTF0HWP');
     </script>
     <script src="https://unpkg.com/vue@next"></script>
-    <script src='js/talks.js'></script>
+    <script src='js/specification.js'></script>
 </head>
 
 <body>
-    <div class="container" id="talks">
+    <div class="container" id="specification">
         <template v-for="list in lists">
-            <h4> {{ list.year }} </h4>
-            <div v-for="item in list.talks">
-                <p v-if='!item.talk_link'>{{ item.date }} @ {{ item.place }} - {{ item.title }}</p>
-                <p v-if='item.talk_link'>{{ item.date }} @ {{ item.place }} - <a :href="item.talk_link">{{ item.title }}</a></p>
+            <h3> {{ list.domain }} </h3>
+            <div v-for="item in list.records">
+                <p v-if='!item.record_link'>{{ item.date }} - {{ item.title }}</p>
+                <p v-if='item.record_link'>{{ item.date }}  - <a :href="item.record_link">{{ item.title }}</a></p>
                 <p v-if='item.description'>{{ item.description }}</p>
             </div>
-        </template>        
+        </template>   
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
