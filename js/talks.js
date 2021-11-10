@@ -180,13 +180,7 @@ const talks_data = {
                     "place":"台北市政府",
                     "title":"PLASH"                    ,
                     "talk_link":"https://www.dropbox.com/s/0itfkttz6xj8ny9/PLASH-review-LJ.ppt?dl=0"
-                },
-                {
-                    "date":"20140217",
-                    "place":"MLDM Monday",
-                    "talk_link":"https://www.youtube.com/watch?v=h6bGezvduHA",
-                    "title":"pen data 的 ETL 流程與 Visualization 的例子"                    
-                }                 
+                }             
             ]
         }
 
