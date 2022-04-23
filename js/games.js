@@ -3,11 +3,11 @@ const {
     ref
 } = Vue;
 
-const talks_data = {
+const games_data = {
     lists:[
         {
             "year":2022,
-            "talks":[
+            "games":[
                 {
                     "date":"202204",
                     "platform":"switch",
@@ -24,50 +24,10 @@ const talks_data = {
         },
         {
             "year":2020,
-            "talks":[
+            "games":[
                 
-            ]
-        },
-        {
-            "year":2019,
-            "talks":[
-                
-            ]
-        },
-        {
-            "year":2018,
-            "talks":[
-
-            ]
-        },
-        {
-            "year":2017,
-            "talks":[
-                
-            ]
-        },
-        {
-            "year":2016,
-            "talks":[
-
-            ]
-        },
-        {
-            "year":2015,
-            "talks":[                             
-            ]
-        },
-        {
-            "year":2014,
-            "talks":[
-            ]
-        },
-        {
-            "year":2012,
-            "talks":[
             ]
         }
-
     ]            
 }
 
