@@ -15,13 +15,19 @@ const talks_data = {
                     "talk_link":"https://www.dropbox.com/s/31unms3ueoc3x5n/g0v_%E9%AF%8A%E9%AD%9A%E7%9A%84%E5%B0%BE%E5%B7%B4.pptx?dl=0"
                 },
                 {
+                    "date":"20221214",
+                    "title":"跨過創新的邊界—相關法律探索工具",
+                    "place":"2022全國科技法律研討會 @ 台北張榮發基金會國際會議中心",
+                    "talk_link":"https://www.dropbox.com/s/y2xkoa14nidnn5y/%E6%8A%95%E5%BD%B1%E7%89%87_%E9%AF%8A%E9%AD%9A%E7%9A%84%E5%B0%BE%E5%B7%B4%E5%9C%98%E9%9A%8A.pptx?dl=0"
+                },
+                {
                     "date":"20221202",
                     "title":"跨過創新的邊界—相關法律探索工具",
                     "place":"2022全國科技法律研討會 @ 台北張榮發基金會國際會議中心",
                     "talk_link":"https://www.dropbox.com/s/y2xkoa14nidnn5y/%E6%8A%95%E5%BD%B1%E7%89%87_%E9%AF%8A%E9%AD%9A%E7%9A%84%E5%B0%BE%E5%B7%B4%E5%9C%98%E9%9A%8A.pptx?dl=0"
                 },
                 {
-                    "date":"20210314",
+                    "date":"20220930",
                     "place":"2022 法律法遵黑客松 @ 西門紅樓",
                     "title":"法規衝擊分析工具",
                     "talk_link":"https://www.dropbox.com/s/eh06r3gsrlxqbl2/%E6%B1%BA%E8%B3%BD%E7%B0%A1%E5%A0%B1_%E9%AF%8A%E9%AD%9A%E7%9A%84%E5%B0%BE%E5%B7%B4.pptx?dl=0"
