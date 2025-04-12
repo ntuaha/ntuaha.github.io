@@ -1,2 +1,8 @@
-# ntuaha.github.io
-[my personal website](https://ntuaha.github.io/)
+# 更新
+
+
+部署程式到 GitHub Pages
+
+```bash
+npm run deploy
+```ㄋ
