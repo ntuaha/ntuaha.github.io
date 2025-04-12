@@ -3,6 +3,6 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/ntuaha/', // 與 repo 名稱相同
+  base: '/', // 與 repo 名稱相同
   plugins: [vue()],
 })
