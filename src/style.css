@@ -13,10 +13,25 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face{
+    font-family: 'SAOUI';
+    src: url('./assets/fonts/SAOUI.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 400;
+    unicode-range: U+0000-5FF;
+    font-display: swap;
+}
+
+* {
+    font-family: 'SAOUI';
+    color: rgba(60,60,61,1) !important;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
+  transition: color 0.25s;
 }
 a:hover {
   color: #535bf2;
@@ -28,6 +43,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background:  rgba(194, 194, 194, 0.9);
 }
 
 h1 {
@@ -62,7 +78,7 @@ button:focus-visible {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  text-align: left;
 }
 
 @media (prefers-color-scheme: light) {
