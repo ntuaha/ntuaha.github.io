@@ -1,0 +1,136 @@
+{
+  "personal": {
+    "name": "林鉦育",
+    "englishName": "aha",
+    "title": "Senior Engineering Manager & Tech Innovator",
+    "subtitle": "熱愛技術與創新 • 專注於金融科技與人工智能",
+    "email": "ntuaha@gmail.com",
+    "profileImage": "./assets/aha.jpg"
+  },
+  "about": {
+    "descriptions": [
+      "我是林鉦育 (aha)，現任玉山銀行智能金融處技術中心資深副總工程師，同時也是國立台灣大學資訊工程學系博士班學生。",
+      "專精於金融科技、人工智能、雲端架構設計，擁有豐富的大型系統開發與團隊管理經驗。熱愛探索新技術，享受解決複雜問題帶來的成就感。",
+      "除了工作之外，我熱愛電玩遊戲、桌遊、爬山出遊等活動。這些愛好讓我在繁忙的工作之餘保持創造力和靈感。"
+    ],
+    "skills": [
+      { "icon": "🏗️", "name": "系統架構" },
+      { "icon": "🤖", "name": "機器學習" },
+      { "icon": "☁️", "name": "雲端服務" },
+      { "icon": "💰", "name": "金融科技" },
+      { "icon": "👥", "name": "團隊領導" },
+      { "icon": "🔬", "name": "研究開發" }
+    ]
+  },
+  "stats": [
+    { "number": "10+", "label": "Years Experience" },
+    { "number": "3", "label": "Patents" },
+    { "number": "∞", "label": "Lines of Code" }
+  ],
+  "experience": [
+    {
+      "title": "資深副總工程師",
+      "company": "玉山銀行 • 智能金融處技術中心",
+      "period": "2018 - Present",
+      "description": "負責金融科技創新專案的技術規劃與團隊管理，推動數位轉型與AI應用落地。"
+    },
+    {
+      "title": "博士班學生",
+      "company": "國立台灣大學 • 資訊工程學系",
+      "period": "2020 - Present",
+      "description": "專注於人工智能與機器學習研究，探索前沿技術在實務上的應用。"
+    }
+  ],
+  "publications": [
+    {
+      "type": "Conference Paper",
+      "year": "2025",
+      "title": "Concept-Based RAG Models: A High-Accuracy Fact Retrieval Approach",
+      "venue": "FinNLP @ ACL 2025",
+      "url": "https://aclanthology.org/2025.finnlp-1.8/",
+      "featured": true
+    },
+    {
+      "type": "Blog",
+      "year": "Ongoing",
+      "title": "Medium 技術文章",
+      "description": "分享技術心得與產業觀察",
+      "url": "https://medium.com/@aha",
+      "featured": false
+    },
+    {
+      "type": "Article",
+      "year": "2017",
+      "title": "夜半Maker要做啥？來搭無人車做實驗啊！",
+      "venue": "MakerPro",
+      "url": "https://makerpro.cc/2017/08/taking-autonomous-car-at-midnight-in-taipei-for-maker-experiments/",
+      "featured": false
+    }
+  ],
+  "patents": [
+    {
+      "number": "M618228",
+      "title": "不中斷服務系統",
+      "description": "創新的服務可用性保障機制"
+    },
+    {
+      "number": "I643144",
+      "title": "金融資訊互動推薦系統及其互動推薦方法",
+      "description": "智能化金融服務推薦演算法"
+    },
+    {
+      "number": "201814611",
+      "title": "金融資訊互動推薦系統及其互動推薦方法 (發明)",
+      "description": "基於機器學習的個人化推薦系統"
+    }
+  ],
+  "travels": [
+    { "year": "2025", "destination": "阿布達比、杜拜", "flag": "🇦🇪" },
+    { "year": "2024", "destination": "北海道、東京", "flag": "🇯🇵" },
+    { "year": "2023", "destination": "杜拜、約旦、以色列", "flag": "🇦🇪🇯🇴🇮🇱" },
+    { "year": "2023", "destination": "京都、大阪", "flag": "🇯🇵" },
+    { "year": "2023", "destination": "紐西蘭", "flag": "🇳🇿" },
+    {
+      "year": "2022",
+      "destination": "司馬庫斯",
+      "flag": "🇹🇼",
+      "url": "https://aha.medium.com/%E5%8F%B8%E9%A6%AC%E5%BA%AB%E6%96%AF%E6%97%85%E9%81%8A-84d098c20f2e"
+    },
+    { "year": "2019", "destination": "美國加州", "flag": "🇺🇸" }
+  ],
+  "contact": {
+    "description": "對於技術交流、合作機會或任何有趣的想法，歡迎隨時與我聊聊！",
+    "methods": [
+      {
+        "icon": "📧",
+        "label": "Email",
+        "url": "mailto:ntuaha@gmail.com",
+        "text": "ntuaha@gmail.com"
+      },
+      {
+        "icon": "🔗",
+        "label": "Blog",
+        "url": "https://medium.com/@aha",
+        "text": "Medium Blog"
+      },
+      {
+        "icon": "🎯",
+        "label": "Talks",
+        "url": "talks.html",
+        "text": "演講清單"
+      },
+      {
+        "icon": "⚡",
+        "label": "Skills",
+        "url": "specification.html",
+        "text": "專長領域"
+      }
+    ]
+  },
+  "navigation": [
+    { "href": "#about", "text": "About" },
+    { "href": "#experience", "text": "Experience" },
+    { "href": "#projects", "text": "Projects" },
+    { "href": "#contact", "text": "Contact" }
+  ]
+}
