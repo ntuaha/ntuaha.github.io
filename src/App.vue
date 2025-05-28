@@ -305,11 +305,34 @@ export default {
 </script>
 
 <style scoped>
+/* CSS Variables for component scope */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fffe;
+  --bg-card: rgba(248, 255, 254, 0.95);
+  --text-primary: #0d4c0d;
+  --text-secondary: #1a6b1a;
+  --text-accent: #0e8a0e;
+  --accent-primary: #00a844;
+  --accent-secondary: #00994d;
+  --accent-gradient: linear-gradient(135deg, #00a844 0%, #00994d 100%);
+  --border-color: rgba(0, 168, 68, 0.25);
+  --shadow-primary: 0 8px 32px rgba(0, 168, 68, 0.2);
+  --shadow-secondary: 0 4px 16px rgba(0, 153, 77, 0.15);
+}
+
 /* App Container */
 .app-container {
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
+  background: #ffffff;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(0, 168, 68, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 153, 77, 0.06) 0%, transparent 50%),
+    linear-gradient(0deg, transparent 24%, rgba(0, 168, 68, 0.03) 25%, rgba(0, 168, 68, 0.03) 26%, transparent 27%, transparent 74%, rgba(0, 168, 68, 0.03) 75%, rgba(0, 168, 68, 0.03) 76%, transparent 77%, transparent);
+  background-attachment: fixed;
+  background-size: 100% 100%, 100% 100%, 80px 80px;
 }
 
 /* Background Effects */
@@ -317,10 +340,11 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
   z-index: -1;
+  opacity: 1;
 }
 
 .grid-overlay {
@@ -330,10 +354,11 @@ export default {
   width: 100%;
   height: 100%;
   background-image: 
-    linear-gradient(rgba(57, 255, 20, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(57, 255, 20, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(0, 168, 68, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 168, 68, 0.12) 1px, transparent 1px);
   background-size: 50px 50px;
   animation: gridMove 20s linear infinite;
+  opacity: 1;
 }
 
 @keyframes gridMove {
@@ -341,16 +366,25 @@ export default {
   100% { transform: translate(50px, 50px); }
 }
 
+.floating-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
 .floating-particles::before,
 .floating-particles::after {
   content: '';
   position: absolute;
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   background: var(--accent-primary);
   border-radius: 50%;
   animation: float 6s ease-in-out infinite;
-  box-shadow: 0 0 10px var(--accent-primary);
+  box-shadow: 0 0 15px var(--accent-primary), 0 0 30px rgba(0, 168, 68, 0.4);
+  z-index: 1;
 }
 
 .floating-particles::before {
@@ -365,9 +399,41 @@ export default {
   animation-delay: -4s;
 }
 
+/* Add more floating elements */
+.bg-effects::before,
+.bg-effects::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--accent-secondary);
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite reverse;
+  box-shadow: 0 0 10px var(--accent-secondary), 0 0 20px rgba(0, 153, 77, 0.3);
+  z-index: 1;
+}
+
+.bg-effects::before {
+  top: 40%;
+  left: 10%;
+  animation-delay: -1s;
+}
+
+.bg-effects::after {
+  top: 80%;
+  right: 15%;
+  animation-delay: -3s;
+}
+
 @keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.3; }
-  50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+    opacity: 0.5; 
+  }
+  50% { 
+    transform: translateY(-20px) rotate(180deg); 
+    opacity: 1; 
+  }
 }
 
 /* Navigation */
@@ -377,7 +443,7 @@ export default {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(13, 17, 23, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-color);
   transition: all 0.3s ease;
@@ -460,13 +526,13 @@ export default {
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid var(--accent-primary);
-  box-shadow: 0 0 40px rgba(0, 255, 65, 0.4);
+  box-shadow: 0 0 40px rgba(0, 168, 68, 0.3);
   transition: all 0.3s ease;
 }
 
 .profile-image:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 60px rgba(0, 255, 65, 0.6);
+  box-shadow: 0 0 60px rgba(0, 168, 68, 0.5);
 }
 
 .profile-ring {
@@ -536,7 +602,7 @@ export default {
 
 .stat-label {
   display: block;
-  font-size: 0.9rem;
+  font-size: 1rem; /* Increased from 0.9rem to meet 14pt minimum */
   color: var(--text-secondary);
   margin-top: 0.5rem;
   font-weight: 500;
@@ -582,18 +648,32 @@ export default {
 }
 
 .section-content {
-  background: var(--bg-card);
+  background: rgba(248, 255, 254, 0.9);
   backdrop-filter: blur(10px);
   border: 1px solid var(--border-color);
   border-radius: 20px;
   padding: 3rem;
   box-shadow: var(--shadow-secondary);
   transition: all 0.3s ease;
+  position: relative;
+}
+
+.section-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 204, 51, 0.02) 0%, rgba(0, 179, 89, 0.02) 100%);
+  border-radius: 20px;
+  z-index: -1;
 }
 
 .section-content:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-primary);
+  border-color: rgba(0, 204, 51, 0.3);
 }
 
 /* About Section */
@@ -630,7 +710,7 @@ export default {
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  background: rgba(100, 255, 218, 0.05);
+  background: rgba(0, 204, 51, 0.03);
   border: 1px solid var(--border-color);
   border-radius: 12px;
   transition: all 0.3s ease;
@@ -638,9 +718,10 @@ export default {
 }
 
 .skill-item:hover {
-  background: rgba(57, 255, 20, 0.1);
+  background: rgba(0, 204, 51, 0.1);
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(57, 255, 20, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 204, 51, 0.2);
+  border-color: var(--accent-primary);
 }
 
 .skill-icon {
@@ -649,7 +730,7 @@ export default {
 }
 
 .skill-name {
-  font-size: 0.9rem;
+  font-size: 1rem; /* Increased from 0.9rem to meet 14pt minimum */
   font-weight: 500;
   color: var(--text-secondary);
 }
@@ -684,7 +765,7 @@ export default {
   height: 12px;
   background: var(--accent-primary);
   border-radius: 50%;
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 168, 68, 0.4);
 }
 
 .timeline-title {
@@ -701,7 +782,7 @@ export default {
 }
 
 .timeline-period {
-  font-size: 0.9rem;
+  font-size: 1rem; /* Increased from 0.9rem to meet 14pt minimum */
   color: var(--text-secondary);
   margin-bottom: 1rem;
   font-weight: 500;
@@ -720,7 +801,7 @@ export default {
 
 .publication-item {
   padding: 2rem;
-  background: rgba(0, 212, 255, 0.02);
+  background: rgba(0, 204, 51, 0.02);
   border: 1px solid var(--border-color);
   border-radius: 16px;
   transition: all 0.3s ease;
@@ -733,7 +814,9 @@ export default {
 
 .publication-item:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(57, 255, 20, 0.15);
+  box-shadow: 0 12px 40px rgba(0, 204, 51, 0.12);
+  border-color: var(--accent-primary);
+  background: rgba(0, 204, 51, 0.05);
 }
 
 .publication-header {
@@ -748,7 +831,7 @@ export default {
   background: var(--accent-primary);
   color: var(--bg-primary);
   border-radius: 20px;
-  font-size: 0.8rem;
+  font-size: 1rem; /* Increased from 0.8rem to meet 14pt minimum */
   font-weight: 600;
 }
 
@@ -782,7 +865,7 @@ export default {
 
 .patent-item {
   padding: 2rem;
-  background: rgba(0, 212, 255, 0.02);
+  background: rgba(0, 204, 51, 0.02);
   border: 1px solid var(--border-color);
   border-radius: 16px;
   transition: all 0.3s ease;
@@ -791,8 +874,9 @@ export default {
 
 .patent-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(57, 255, 20, 0.2);
-  background: rgba(57, 255, 20, 0.05);
+  box-shadow: 0 15px 40px rgba(0, 204, 51, 0.15);
+  background: rgba(0, 204, 51, 0.05);
+  border-color: var(--accent-primary);
 }
 
 .patent-number {
@@ -802,7 +886,7 @@ export default {
   color: white;
   border-radius: 25px;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 1rem; /* Increased from 0.9rem to meet 14pt minimum */
   margin-bottom: 1rem;
 }
 
@@ -816,7 +900,7 @@ export default {
 
 .patent-description {
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: 1rem; /* Increased from 0.95rem to meet 14pt minimum */
   line-height: 1.5;
 }
 
@@ -832,7 +916,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem;
-  background: rgba(100, 255, 218, 0.02);
+  background: rgba(0, 204, 51, 0.02);
   border: 1px solid var(--border-color);
   border-radius: 12px;
   transition: all 0.3s ease;
@@ -840,8 +924,8 @@ export default {
 
 .travel-item:hover {
   transform: translateY(-3px);
-  background: rgba(57, 255, 20, 0.05);
-  box-shadow: 0 8px 25px rgba(57, 255, 20, 0.15);
+  background: rgba(0, 204, 51, 0.04);
+  box-shadow: 0 8px 25px rgba(0, 204, 51, 0.12);
 }
 
 .travel-year {
@@ -889,7 +973,7 @@ export default {
   justify-content: center;
   gap: 1rem;
   padding: 1.5rem;
-  background: rgba(0, 212, 255, 0.02);
+  background: rgba(0, 204, 51, 0.02);
   border: 1px solid var(--border-color);
   border-radius: 12px;
   transition: all 0.3s ease;
@@ -897,8 +981,8 @@ export default {
 
 .contact-item:hover {
   transform: translateY(-3px);
-  background: rgba(57, 255, 20, 0.08);
-  box-shadow: 0 10px 30px rgba(57, 255, 20, 0.2);
+  background: rgba(0, 204, 51, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 204, 51, 0.15);
 }
 
 .contact-icon {
@@ -918,7 +1002,7 @@ export default {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(13, 17, 23, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   border-top: 1px solid var(--border-color);
   padding: 1.5rem 0;
@@ -938,7 +1022,7 @@ export default {
 
 .footer-text {
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: 1rem; /* Increased from 0.95rem to meet 14pt minimum */
 }
 
 .footer-links {
@@ -948,7 +1032,7 @@ export default {
 
 .footer-link {
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 1rem; /* Increased from 0.9rem to meet 14pt minimum */
   transition: color 0.3s ease;
 }
 
