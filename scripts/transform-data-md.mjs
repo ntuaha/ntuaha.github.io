@@ -128,6 +128,25 @@ function validate(frontMatter, sections) {
   checkSourceRefs(sections.publications, 'publications');
   checkSourceRefs(sections.patents, 'patents');
   checkSourceRefObject(sections.lifestyle, 'lifestyle');
+
+  const imageUrlLooksLikeWikiPage = (url) => {
+    if (typeof url !== 'string') return false;
+    return url.includes('#/media/') || /wikipedia\.org\/wiki\/(?!Special:FilePath\/)/.test(url);
+  };
+
+  const assertImageUrls = (items, sectionName) => {
+    if (!Array.isArray(items)) return;
+    for (const item of items) {
+      if (imageUrlLooksLikeWikiPage(item?.image)) {
+        fail(
+          `Invalid image URL in section "${sectionName}". Use direct image URL (e.g. https://.../Special:FilePath/filename.jpg), not a wiki page URL.`
+        );
+      }
+    }
+  };
+
+  assertImageUrls(sections.lifestyle?.movies, 'lifestyle.movies');
+  assertImageUrls(sections.lifestyle?.travel, 'lifestyle.travel');
 }
 
 async function main() {

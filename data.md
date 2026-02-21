@@ -156,27 +156,21 @@ maintainer: ntuaha
     {
       "title": "Interstellar",
       "year": "2014",
-      "note": "範例：可替換成你真實清單",
-      "image": "https://picsum.photos/seed/movie-interstellar/420/240"
+      "note": "很棒的科幻電影",
+      "image": "https://en.wikipedia.org/wiki/Special:FilePath/Interstellar_film_poster.jpg"
     },
     {
       "title": "The Lord of the Rings: The Fellowship of the Ring",
       "year": "2001",
-      "note": "範例",
-      "image": "https://picsum.photos/seed/movie-lotr/420/240"
-    },
-    {
-      "title": "Dune: Part Two",
-      "year": "2024",
-      "note": "範例",
-      "image": "https://picsum.photos/seed/movie-dune2/420/240"
+      "note": "三部曲",
+      "image": "https://en.wikipedia.org/wiki/Special:FilePath/Lord_Rings_Fellowship_Ring.jpg"
     }
   ],
   "travel": [
     {
       "region": "日本",
       "places": ["北海道", "仙台", "山陰", "山陽", "四國", "東京", "京都", "大阪", "廣島"],
-      "image": "https://picsum.photos/seed/travel-japan/640/360"
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Himeji_castle_in_may_2015.jpg"
     },
     {
       "region": "中國",
