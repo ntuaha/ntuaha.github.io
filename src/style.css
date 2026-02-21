@@ -145,6 +145,41 @@ main {
   font-size: 0.88rem;
 }
 
+.sub-section {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.sub-title {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.media-card {
+  border: 1px solid var(--paper-line);
+  padding: 0.6rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.media-card h4 {
+  margin: 0;
+  font-size: 0.96rem;
+}
+
+.media-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1px solid var(--paper-line);
+}
+
 @media (max-width: 700px) {
   .paper-layout {
     padding: 1.2rem 1rem 2rem;
@@ -157,5 +192,9 @@ main {
   .profile-image {
     width: 140px;
     height: 140px;
+  }
+
+  .media-grid {
+    grid-template-columns: 1fr;
   }
 }

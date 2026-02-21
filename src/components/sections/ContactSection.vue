@@ -1,6 +1,6 @@
 <template>
   <section id="contact" class="paper-section">
-    <h2 class="section-title">V. Contact</h2>
+    <h2 class="section-title">VII. Contact</h2>
     <div class="section-body">
       <p class="body-text">{{ contact.description }}</p>
       <ul class="contact-list">

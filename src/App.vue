@@ -28,6 +28,7 @@
       <ExperienceSection :experience="profile.experience" />
       <PublicationsSection :publications="profile.publications" />
       <PatentsSection :patents="profile.patents" />
+      <LifestyleSection :lifestyle="profile.lifestyle" />
       <ContactSection :contact="profile.contact" />
       <SourcesSection :sources="profile.sources" />
     </main>
@@ -46,6 +47,7 @@ import PublicationsSection from './components/sections/PublicationsSection.vue';
 import PatentsSection from './components/sections/PatentsSection.vue';
 import ContactSection from './components/sections/ContactSection.vue';
 import SourcesSection from './components/sections/SourcesSection.vue';
+import LifestyleSection from './components/sections/LifestyleSection.vue';
 
 const profile = useProfileData();
 </script>

@@ -13,6 +13,7 @@ const REQUIRED_SECTIONS = [
   'experience',
   'publications',
   'patents',
+  'lifestyle',
   'contact',
   'navigation',
   'sources'
@@ -97,23 +98,36 @@ function validate(frontMatter, sections) {
     sourceIds.add(source.id);
   }
 
+  const validateIds = (ids, sectionName) => {
+    for (const id of ids) {
+      if (!sourceIds.has(id)) {
+        fail(`Invalid sourceId "${id}" in section "${sectionName}"`);
+      }
+    }
+  };
+
   const checkSourceRefs = (items, sectionName) => {
     if (!Array.isArray(items)) return;
     for (const item of items) {
       const ids = item?.sourceId
         ? (Array.isArray(item.sourceId) ? item.sourceId : [item.sourceId])
         : [];
-      for (const id of ids) {
-        if (!sourceIds.has(id)) {
-          fail(`Invalid sourceId "${id}" in section "${sectionName}"`);
-        }
-      }
+      validateIds(ids, sectionName);
     }
+  };
+
+  const checkSourceRefObject = (sectionValue, sectionName) => {
+    if (!sectionValue || typeof sectionValue !== 'object') return;
+    const ids = sectionValue.sourceId
+      ? (Array.isArray(sectionValue.sourceId) ? sectionValue.sourceId : [sectionValue.sourceId])
+      : [];
+    validateIds(ids, sectionName);
   };
 
   checkSourceRefs(sections.experience, 'experience');
   checkSourceRefs(sections.publications, 'publications');
   checkSourceRefs(sections.patents, 'patents');
+  checkSourceRefObject(sections.lifestyle, 'lifestyle');
 }
 
 async function main() {
@@ -131,6 +145,7 @@ async function main() {
     experience: sections.experience,
     publications: sections.publications,
     patents: sections.patents,
+    lifestyle: sections.lifestyle,
     contact: sections.contact,
     navigation: sections.navigation,
     sources: sections.sources

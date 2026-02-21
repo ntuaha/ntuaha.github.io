@@ -2,7 +2,7 @@
   "meta": {
     "subject_name": "林鉦育",
     "last_verified": "2026-02-21",
-    "version": "1",
+    "version": "2",
     "maintainer": "ntuaha"
   },
   "personal": {
@@ -97,24 +97,176 @@
       "number": "M618228",
       "title": "不中斷服務系統",
       "description": "Service continuity system.",
-      "verification": "pending",
+      "verification": "accepted",
       "sourceId": "S1"
     },
     {
       "number": "I643144",
       "title": "金融資訊互動推薦系統及其互動推薦方法",
       "description": "Interactive recommendation for financial information.",
-      "verification": "pending",
+      "verification": "accepted",
       "sourceId": "S1"
     },
     {
       "number": "201814611",
       "title": "金融資訊互動推薦系統及其互動推薦方法 (發明)",
       "description": "Machine-learning based personalized recommendation system.",
-      "verification": "pending",
+      "verification": "accepted",
       "sourceId": "S1"
     }
   ],
+  "lifestyle": {
+    "books": [
+      {
+        "title": "電玩的本質"
+      },
+      {
+        "title": "極限返航"
+      },
+      {
+        "title": "貪污治罪條例逐條評釋"
+      }
+    ],
+    "games": [
+      {
+        "title": "Enders lilis"
+      },
+      {
+        "title": "Enders Magnolis"
+      },
+      {
+        "title": "DQ 7 reinamged"
+      },
+      {
+        "title": "DQ 11s"
+      },
+      {
+        "title": "DQ 6"
+      },
+      {
+        "title": "P5R"
+      },
+      {
+        "title": "Hollow knight"
+      },
+      {
+        "title": "Silksong"
+      },
+      {
+        "title": "人中之龍 7"
+      },
+      {
+        "title": "FF7 remake / rebrith"
+      },
+      {
+        "title": "三角戰略"
+      },
+      {
+        "title": "Octotraveler 0 / 1 / 2"
+      },
+      {
+        "title": "Ys 8 / 9 / 10"
+      },
+      {
+        "title": "超時空之鑰"
+      },
+      {
+        "title": "天地創造"
+      },
+      {
+        "title": "Rockman 3 / 4 / 5 / 6"
+      },
+      {
+        "title": "Rockman X / X2 / X3 / X4 / X5 / X6 / X8"
+      },
+      {
+        "title": "惡魔城 曉月圓舞曲"
+      }
+    ],
+    "movies": [
+      {
+        "title": "Interstellar",
+        "year": "2014",
+        "note": "範例：可替換成你真實清單",
+        "image": "https://picsum.photos/seed/movie-interstellar/420/240"
+      },
+      {
+        "title": "The Lord of the Rings: The Fellowship of the Ring",
+        "year": "2001",
+        "note": "範例",
+        "image": "https://picsum.photos/seed/movie-lotr/420/240"
+      },
+      {
+        "title": "Dune: Part Two",
+        "year": "2024",
+        "note": "範例",
+        "image": "https://picsum.photos/seed/movie-dune2/420/240"
+      }
+    ],
+    "travel": [
+      {
+        "region": "日本",
+        "places": [
+          "北海道",
+          "仙台",
+          "山陰",
+          "山陽",
+          "四國",
+          "東京",
+          "京都",
+          "大阪",
+          "廣島"
+        ],
+        "image": "https://picsum.photos/seed/travel-japan/640/360"
+      },
+      {
+        "region": "中國",
+        "places": [
+          "北京",
+          "上海",
+          "杭州"
+        ],
+        "image": "https://picsum.photos/seed/travel-china/640/360"
+      },
+      {
+        "region": "中東",
+        "places": [
+          "杜拜",
+          "阿布達比",
+          "約旦",
+          "以色列",
+          "巴勒斯坦"
+        ],
+        "image": "https://picsum.photos/seed/travel-middleeast/640/360"
+      },
+      {
+        "region": "歐洲",
+        "places": [
+          "德國",
+          "瑞士",
+          "法國"
+        ],
+        "image": "https://picsum.photos/seed/travel-europe/640/360"
+      },
+      {
+        "region": "美洲",
+        "places": [
+          "美國"
+        ],
+        "image": "https://picsum.photos/seed/travel-america/640/360"
+      },
+      {
+        "region": "東南亞",
+        "places": [
+          "泰國",
+          "越南",
+          "新加玻"
+        ],
+        "image": "https://picsum.photos/seed/travel-sea/640/360"
+      }
+    ],
+    "sourceId": "S5"
+  },
   "contact": {
     "description": "Open to technical collaboration and research discussions.",
     "methods": [
@@ -148,6 +300,10 @@
       "text": "Patents"
     },
     {
+      "href": "#lifestyle",
+      "text": "Lifestyle"
+    },
+    {
       "href": "#contact",
       "text": "Contact"
     }
@@ -175,6 +331,12 @@
       "id": "S4",
       "title": "MakerPro article",
       "url": "https://makerpro.cc/2017/08/taking-autonomous-car-at-midnight-in-taipei-for-maker-experiments/",
+      "accessed": "2026-02-21"
+    },
+    {
+      "id": "S5",
+      "title": "Personal curated list (books, games, movies, travel)",
+      "url": "https://ntuaha.github.io/",
       "accessed": "2026-02-21"
     }
   ]
