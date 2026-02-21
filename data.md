@@ -1,0 +1,185 @@
+---
+subject_name: 林鉦育
+last_verified: 2026-02-21
+version: 1
+maintainer: ntuaha
+---
+
+# Profile Data Foundation
+
+## personal
+```json
+{
+  "name": "林鉦育",
+  "englishName": "aha",
+  "title": "Senior Engineering Manager & PhD Student",
+  "subtitle": "FinTech, AI, and Software Engineering",
+  "email": "ntuaha@gmail.com",
+  "profileImage": "./assets/aha.jpg"
+}
+```
+
+## about
+```json
+{
+  "descriptions": [
+    "林鉦育（aha）專注於金融科技與人工智慧應用，持續投入大型系統與技術管理工作。",
+    "研究與實務方向包含 RAG、生成式 AI 與金融場景落地。"
+  ],
+  "skills": [
+    { "name": "System Architecture" },
+    { "name": "Machine Learning" },
+    { "name": "FinTech" },
+    { "name": "Engineering Leadership" }
+  ]
+}
+```
+
+## stats
+```json
+[
+  { "number": "10+", "label": "Years in Software" },
+  { "number": "3", "label": "Patents Listed" },
+  { "number": "2025", "label": "Latest Publication" }
+]
+```
+
+## experience
+```json
+[
+  {
+    "title": "Senior Engineering Manager",
+    "company": "E.SUN Bank",
+    "period": "2018 - Present",
+    "description": "Led technology initiatives for intelligent finance and digital transformation.",
+    "sourceId": "S1"
+  },
+  {
+    "title": "PhD Student",
+    "company": "National Taiwan University, CSIE",
+    "period": "2023 - Present",
+    "description": "Research focus on AI and machine learning applications.",
+    "sourceId": "S1"
+  }
+]
+```
+
+## publications
+```json
+[
+  {
+    "type": "Conference Paper",
+    "year": "2025",
+    "title": "Concept-Based RAG Models: A High-Accuracy Fact Retrieval Approach",
+    "venue": "FinNLP @ ACL 2025",
+    "url": "https://aclanthology.org/2025.finnlp-1.8/",
+    "featured": true,
+    "sourceId": "S2"
+  },
+  {
+    "type": "Blog",
+    "year": "Ongoing",
+    "title": "Medium 技術文章",
+    "description": "Technical posts and observations.",
+    "url": "https://medium.com/@aha",
+    "featured": false,
+    "sourceId": "S3"
+  },
+  {
+    "type": "Article",
+    "year": "2017",
+    "title": "夜半Maker要做啥？來搭無人車做實驗啊！",
+    "venue": "MakerPro",
+    "url": "https://makerpro.cc/2017/08/taking-autonomous-car-at-midnight-in-taipei-for-maker-experiments/",
+    "featured": false,
+    "sourceId": "S4"
+  }
+]
+```
+
+## patents
+```json
+[
+  {
+    "number": "M618228",
+    "title": "不中斷服務系統",
+    "description": "Service continuity system.",
+    "verification": "pending",
+    "sourceId": "S1"
+  },
+  {
+    "number": "I643144",
+    "title": "金融資訊互動推薦系統及其互動推薦方法",
+    "description": "Interactive recommendation for financial information.",
+    "verification": "pending",
+    "sourceId": "S1"
+  },
+  {
+    "number": "201814611",
+    "title": "金融資訊互動推薦系統及其互動推薦方法 (發明)",
+    "description": "Machine-learning based personalized recommendation system.",
+    "verification": "pending",
+    "sourceId": "S1"
+  }
+]
+```
+
+## contact
+```json
+{
+  "description": "Open to technical collaboration and research discussions.",
+  "methods": [
+    {
+      "label": "Email",
+      "url": "mailto:ntuaha@gmail.com",
+      "text": "ntuaha@gmail.com"
+    },
+    {
+      "label": "Blog",
+      "url": "https://medium.com/@aha",
+      "text": "Medium"
+    }
+  ]
+}
+```
+
+## navigation
+```json
+[
+  { "href": "#about", "text": "About" },
+  { "href": "#experience", "text": "Experience" },
+  { "href": "#publications", "text": "Publications" },
+  { "href": "#patents", "text": "Patents" },
+  { "href": "#contact", "text": "Contact" }
+]
+```
+
+## sources
+```json
+[
+  {
+    "id": "S1",
+    "title": "Existing personal website profile data",
+    "url": "https://ntuaha.github.io/",
+    "accessed": "2026-02-21"
+  },
+  {
+    "id": "S2",
+    "title": "ACL Anthology FinNLP 2025 paper",
+    "url": "https://aclanthology.org/2025.finnlp-1.8/",
+    "accessed": "2026-02-21"
+  },
+  {
+    "id": "S3",
+    "title": "Medium profile @aha",
+    "url": "https://medium.com/@aha",
+    "accessed": "2026-02-21"
+  },
+  {
+    "id": "S4",
+    "title": "MakerPro article",
+    "url": "https://makerpro.cc/2017/08/taking-autonomous-car-at-midnight-in-taipei-for-maker-experiments/",
+    "accessed": "2026-02-21"
+  }
+]
+```
