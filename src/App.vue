@@ -1,5 +1,7 @@
 <template>
-  <div class="paper-layout">
+  <ShowcasePage v-if="currentPage === 'showcase'" />
+
+  <div v-else class="paper-layout">
     <header class="paper-header">
       <p class="kicker">Personal Website</p>
       <h1>{{ profile.personal.name }} ({{ profile.personal.englishName }})</h1>
@@ -7,6 +9,7 @@
       <p class="subtitle muted">{{ profile.personal.subtitle }}</p>
       <nav class="top-nav">
         <a v-for="nav in profile.navigation" :key="nav.href" :href="nav.href">{{ nav.text }}</a>
+        <a href="#showcase">Showcase</a>
       </nav>
     </header>
 
@@ -48,6 +51,23 @@ import PatentsSection from './components/sections/PatentsSection.vue';
 import ContactSection from './components/sections/ContactSection.vue';
 import SourcesSection from './components/sections/SourcesSection.vue';
 import LifestyleSection from './components/sections/LifestyleSection.vue';
+import ShowcasePage from './components/ShowcasePage.vue';
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 
 const profile = useProfileData();
+const routeHash = ref(window.location.hash);
+
+const syncHash = () => {
+  routeHash.value = window.location.hash;
+};
+
+onMounted(() => {
+  window.addEventListener('hashchange', syncHash);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('hashchange', syncHash);
+});
+
+const currentPage = computed(() => (routeHash.value === '#showcase' ? 'showcase' : 'home'));
 </script>
