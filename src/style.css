@@ -182,11 +182,16 @@ main {
 
 .showcase-page {
   --showcase-image: none;
-  min-height: 100vh;
+  --showcase-accent: #e50914;
+  --showcase-focus: center;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 620px;
+  margin-top: 0;
   position: relative;
   overflow: hidden;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto minmax(0, 1fr) auto;
   color: #ffffff;
   background: #050505;
   font-family: Arial, 'Noto Serif TC', sans-serif;
@@ -197,7 +202,7 @@ main {
   position: absolute;
   inset: 0;
   background-image: var(--showcase-image);
-  background-position: center;
+  background-position: var(--showcase-focus);
   background-size: cover;
   filter: saturate(1.08);
   transform: scale(1.02);
@@ -208,8 +213,9 @@ main {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.7) 34%, rgba(0, 0, 0, 0.3) 68%, rgba(0, 0, 0, 0.65) 100%),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.15) 38%, rgba(0, 0, 0, 0.78) 100%);
+    radial-gradient(circle at 62% 44%, color-mix(in srgb, var(--showcase-accent) 18%, transparent) 0%, transparent 34%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.94) 0%, rgba(0, 0, 0, 0.78) 34%, rgba(0, 0, 0, 0.25) 68%, rgba(0, 0, 0, 0.58) 100%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.97) 0%, rgba(0, 0, 0, 0.12) 42%, rgba(0, 0, 0, 0.76) 100%);
 }
 
 .showcase-topbar,
@@ -223,11 +229,12 @@ main {
   display: flex;
   align-items: center;
   gap: 2rem;
-  padding: 1.3rem clamp(1.1rem, 4vw, 3.4rem);
+  min-height: 4.5rem;
+  padding: 1rem clamp(1.1rem, 4vw, 3.4rem);
 }
 
 .showcase-logo {
-  color: #e50914;
+  color: var(--showcase-accent);
   text-decoration: none;
   text-transform: uppercase;
   font-family: Arial, sans-serif;
@@ -254,8 +261,9 @@ main {
 
 .showcase-hero {
   align-self: center;
-  width: min(720px, 92vw);
-  padding: clamp(2rem, 7vw, 5rem) clamp(1.1rem, 4vw, 3.4rem);
+  width: min(760px, 92vw);
+  min-width: 0;
+  padding: clamp(1.25rem, 4.2vh, 3.7rem) clamp(1.1rem, 4vw, 3.4rem);
 }
 
 .showcase-kicker {
@@ -270,28 +278,42 @@ main {
 
 .showcase-hero h1 {
   margin: 0;
-  max-width: 12ch;
+  max-width: 13ch;
   color: #ffffff;
   font-family: Arial, 'Noto Serif TC', sans-serif;
-  font-size: clamp(2.6rem, 7vw, 5.8rem);
-  line-height: 0.95;
+  font-size: clamp(2.2rem, 6vw, 5rem);
+  line-height: 1;
   letter-spacing: 0;
   text-shadow: 0 0.18rem 1.2rem rgba(0, 0, 0, 0.62);
 }
 
+.showcase-meta {
+  margin: 0.75rem 0 0;
+  color: color-mix(in srgb, var(--showcase-accent) 72%, #ffffff);
+  font-family: Arial, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .showcase-description {
-  margin: 1.25rem 0 0;
-  max-width: 620px;
+  margin: 0.8rem 0 0;
+  max-width: 600px;
   color: rgba(255, 255, 255, 0.88);
-  font-size: clamp(1rem, 1.8vw, 1.25rem);
-  line-height: 1.6;
+  font-size: clamp(0.95rem, 1.55vw, 1.18rem);
+  line-height: 1.55;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
 .showcase-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin: 1rem 0 1.35rem;
+  margin: 0.85rem 0 1.1rem;
   padding: 0;
   list-style: none;
 }
@@ -306,7 +328,7 @@ main {
 .showcase-tags li + li::before {
   content: '•';
   margin-right: 0.5rem;
-  color: #e50914;
+  color: var(--showcase-accent);
 }
 
 .watch-button {
@@ -332,16 +354,19 @@ main {
 .showcase-rail {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: minmax(180px, 16vw);
-  gap: 0.9rem;
+  grid-auto-columns: clamp(176px, 16.5vw, 238px);
+  gap: 0.8rem;
   overflow-x: auto;
-  padding: 1rem clamp(1.1rem, 4vw, 3.4rem) 2.2rem;
+  overflow-y: hidden;
+  padding: 0.8rem clamp(1.1rem, 4vw, 3.4rem) 1.35rem;
   scrollbar-width: thin;
+  overscroll-behavior-x: contain;
 }
 
 .showcase-card {
   display: grid;
-  gap: 0.45rem;
+  grid-template-rows: auto 1rem 2.65rem;
+  gap: 0.22rem;
   padding: 0;
   border: 0;
   border-radius: 6px;
@@ -360,26 +385,42 @@ main {
   border: 2px solid transparent;
 }
 
-.showcase-card span {
-  min-height: 2.7rem;
-  padding: 0 0.65rem 0.65rem;
+.showcase-card-kind,
+.showcase-card-title {
+  padding: 0 0.65rem;
   font-family: Arial, 'Noto Serif TC', sans-serif;
+}
+
+.showcase-card-kind {
+  align-self: end;
+  color: color-mix(in srgb, var(--showcase-accent) 82%, #ffffff);
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.showcase-card-title {
+  padding-bottom: 0.65rem;
   font-size: 0.92rem;
   font-weight: 700;
   line-height: 1.25;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .showcase-card:hover,
 .showcase-card:focus-visible,
 .showcase-card.active {
-  transform: translateY(-4px);
   background: rgba(255, 255, 255, 0.18);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.35);
   outline: none;
 }
 
 .showcase-card.active img {
-  border-color: #e50914;
+  border-color: var(--showcase-accent);
 }
 
 @media (max-width: 700px) {
@@ -401,14 +442,15 @@ main {
   }
 
   .showcase-page {
-    min-height: 100svh;
+    height: 100svh;
+    min-height: 620px;
   }
 
   .showcase-topbar {
     align-items: flex-start;
-    flex-direction: column;
-    gap: 0.55rem;
-    padding-top: 1rem;
+    gap: 0.85rem;
+    min-height: 4rem;
+    padding-top: 0.85rem;
   }
 
   .showcase-logo {
@@ -416,22 +458,58 @@ main {
   }
 
   .showcase-hero {
-    align-self: end;
-    padding-top: 2rem;
-    padding-bottom: 1.2rem;
+    align-self: center;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
   }
 
   .showcase-hero h1 {
-    max-width: 9ch;
-    font-size: clamp(2.2rem, 16vw, 4.2rem);
+    max-width: 10ch;
+    font-size: clamp(2rem, 13vw, 3.7rem);
   }
 
   .showcase-description {
-    font-size: 0.98rem;
+    font-size: 0.95rem;
+    -webkit-line-clamp: 3;
   }
 
   .showcase-rail {
-    grid-auto-columns: 70vw;
-    padding-bottom: 1.25rem;
+    grid-auto-columns: min(72vw, 280px);
+    padding-bottom: 0.95rem;
+  }
+
+  .showcase-card {
+    grid-template-rows: auto 1rem 2.4rem;
+  }
+}
+
+@media (max-height: 760px) and (min-width: 701px) {
+  .showcase-page {
+    min-height: 560px;
+  }
+
+  .showcase-topbar {
+    min-height: 3.8rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .showcase-hero {
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
+  }
+
+  .showcase-hero h1 {
+    font-size: clamp(2rem, 5.2vw, 4.3rem);
+  }
+
+  .showcase-description {
+    -webkit-line-clamp: 2;
+  }
+
+  .showcase-rail {
+    grid-auto-columns: clamp(164px, 15vw, 210px);
+    padding-top: 0.55rem;
+    padding-bottom: 0.9rem;
   }
 }
