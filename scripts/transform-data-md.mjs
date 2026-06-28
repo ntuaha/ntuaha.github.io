@@ -14,9 +14,9 @@ const REQUIRED_SECTIONS = [
   'publications',
   'patents',
   'lifestyle',
+  'policy',
   'contact',
-  'navigation',
-  'sources'
+  'navigation'
 ];
 
 function fail(message) {
@@ -85,50 +85,6 @@ function validate(frontMatter, sections) {
     fail('Section "personal" must be an object');
   }
 
-  const sources = sections.sources;
-  if (!Array.isArray(sources) || sources.length === 0) {
-    fail('Section "sources" must be a non-empty array');
-  }
-
-  const sourceIds = new Set();
-  for (const source of sources) {
-    if (!source?.id || !source?.url) {
-      fail('Each source must include id and url');
-    }
-    sourceIds.add(source.id);
-  }
-
-  const validateIds = (ids, sectionName) => {
-    for (const id of ids) {
-      if (!sourceIds.has(id)) {
-        fail(`Invalid sourceId "${id}" in section "${sectionName}"`);
-      }
-    }
-  };
-
-  const checkSourceRefs = (items, sectionName) => {
-    if (!Array.isArray(items)) return;
-    for (const item of items) {
-      const ids = item?.sourceId
-        ? (Array.isArray(item.sourceId) ? item.sourceId : [item.sourceId])
-        : [];
-      validateIds(ids, sectionName);
-    }
-  };
-
-  const checkSourceRefObject = (sectionValue, sectionName) => {
-    if (!sectionValue || typeof sectionValue !== 'object') return;
-    const ids = sectionValue.sourceId
-      ? (Array.isArray(sectionValue.sourceId) ? sectionValue.sourceId : [sectionValue.sourceId])
-      : [];
-    validateIds(ids, sectionName);
-  };
-
-  checkSourceRefs(sections.experience, 'experience');
-  checkSourceRefs(sections.publications, 'publications');
-  checkSourceRefs(sections.patents, 'patents');
-  checkSourceRefObject(sections.lifestyle, 'lifestyle');
-
   const imageUrlLooksLikeWikiPage = (url) => {
     if (typeof url !== 'string') return false;
     return url.includes('#/media/') || /wikipedia\.org\/wiki\/(?!Special:FilePath\/)/.test(url);
@@ -165,9 +121,9 @@ async function main() {
     publications: sections.publications,
     patents: sections.patents,
     lifestyle: sections.lifestyle,
+    policy: sections.policy,
     contact: sections.contact,
-    navigation: sections.navigation,
-    sources: sections.sources
+    navigation: sections.navigation
   };
 
   await writeFile(OUTPUT_PATH, `${JSON.stringify(profile, null, 2)}\n`, 'utf8');

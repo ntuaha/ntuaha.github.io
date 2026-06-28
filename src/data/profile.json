@@ -52,15 +52,13 @@
       "title": "Senior Engineering Manager",
       "company": "E.SUN Bank",
       "period": "2018 - Present",
-      "description": "Led technology initiatives for intelligent finance and digital transformation.",
-      "sourceId": "S1"
+      "description": "Led technology initiatives for intelligent finance and digital transformation."
     },
     {
       "title": "PhD Student",
       "company": "National Taiwan University, CSIE",
       "period": "2023 - Present",
-      "description": "Research focus on AI and machine learning applications.",
-      "sourceId": "S1"
+      "description": "Research focus on AI and machine learning applications."
     }
   ],
   "publications": [
@@ -70,8 +68,7 @@
       "title": "Concept-Based RAG Models: A High-Accuracy Fact Retrieval Approach",
       "venue": "FinNLP @ ACL 2025",
       "url": "https://aclanthology.org/2025.finnlp-1.8/",
-      "featured": true,
-      "sourceId": "S2"
+      "featured": true
     },
     {
       "type": "Blog",
@@ -79,8 +76,7 @@
       "title": "Medium 技術文章",
       "description": "Technical posts and observations.",
       "url": "https://medium.com/@aha",
-      "featured": false,
-      "sourceId": "S3"
+      "featured": false
     },
     {
       "type": "Article",
@@ -88,8 +84,7 @@
       "title": "夜半Maker要做啥？來搭無人車做實驗啊！",
       "venue": "MakerPro",
       "url": "https://makerpro.cc/2017/08/taking-autonomous-car-at-midnight-in-taipei-for-maker-experiments/",
-      "featured": false,
-      "sourceId": "S4"
+      "featured": false
     }
   ],
   "patents": [
@@ -97,22 +92,19 @@
       "number": "M618228",
       "title": "不中斷服務系統",
       "description": "Service continuity system.",
-      "verification": "accepted",
-      "sourceId": "S1"
+      "verification": "accepted"
     },
     {
       "number": "I643144",
       "title": "金融資訊互動推薦系統及其互動推薦方法",
       "description": "Interactive recommendation for financial information.",
-      "verification": "accepted",
-      "sourceId": "S1"
+      "verification": "accepted"
     },
     {
       "number": "201814611",
       "title": "金融資訊互動推薦系統及其互動推薦方法 (發明)",
       "description": "Machine-learning based personalized recommendation system.",
-      "verification": "accepted",
-      "sourceId": "S1"
+      "verification": "accepted"
     }
   ],
   "lifestyle": {
@@ -258,8 +250,45 @@
         ],
         "image": "https://picsum.photos/seed/travel-sea/640/360"
       }
-    ],
-    "sourceId": "S5"
+    ]
+  },
+  "policy": {
+    "title": "政策想法",
+    "intro": "一些關於交通、都市、住宅、產業與文化治理的想法。",
+    "categories": [
+      {
+        "name": "交通與道路",
+        "items": [
+          "要有許多停車格給車子和機車停，把騎樓全部清空。",
+          "道路中央不要再有分隔島，取而代之的是中央轉彎區域。",
+          "道路兩旁不能再有臨停。",
+          "道路標線防滑係數要拉高到跟日本一樣。"
+        ]
+      },
+      {
+        "name": "住宅與都市空間",
+        "items": [
+          "房屋如果整棟樓停止使用超過 3 年，就需要把土地轉讓給政府，或者改成公共區域、停車場等；否則要課該地段 5% 稅金。",
+          "實價登錄改成實坪。",
+          "要有都市減壓計劃，要有各地經濟發展策略，先有工作分散，才有居住分散。",
+          "人口公園面積比、人口停車位比要拉高。",
+          "道路加路邊建築要有風廊設計概念。"
+        ]
+      },
+      {
+        "name": "公共生活與文化",
+        "items": [
+          "要有行人徒步區，同時重新規劃各地觀光特色區，並進行文化調查與圖書館、美術館規劃。",
+          "要多文化相關產業活動、行銷與交通規劃；價格不需要便宜，品質要有國際水準。"
+        ]
+      },
+      {
+        "name": "產業發展",
+        "items": [
+          "台灣要找一些可以發展的重工業企業扶植，製造是一切的基礎。"
+        ]
+      }
+    ]
   },
   "contact": {
     "description": "Open to technical collaboration and research discussions.",
@@ -298,40 +327,12 @@
       "text": "Lifestyle"
     },
     {
+      "href": "#policy",
+      "text": "Policy"
+    },
+    {
       "href": "#contact",
       "text": "Contact"
-    }
-  ],
-  "sources": [
-    {
-      "id": "S1",
-      "title": "Existing personal website profile data",
-      "url": "https://ntuaha.github.io/",
-      "accessed": "2026-02-21"
-    },
-    {
-      "id": "S2",
-      "title": "ACL Anthology FinNLP 2025 paper",
-      "url": "https://aclanthology.org/2025.finnlp-1.8/",
-      "accessed": "2026-02-21"
-    },
-    {
-      "id": "S3",
-      "title": "Medium profile @aha",
-      "url": "https://medium.com/@aha",
-      "accessed": "2026-02-21"
-    },
-    {
-      "id": "S4",
-      "title": "MakerPro article",
-      "url": "https://makerpro.cc/2017/08/taking-autonomous-car-at-midnight-in-taipei-for-maker-experiments/",
-      "accessed": "2026-02-21"
-    },
-    {
-      "id": "S5",
-      "title": "Personal curated list (books, games, movies, travel)",
-      "url": "https://ntuaha.github.io/",
-      "accessed": "2026-02-21"
     }
   ]
 }

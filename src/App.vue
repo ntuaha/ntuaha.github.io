@@ -10,7 +10,11 @@
       </nav>
     </header>
 
-    <main>
+    <main v-if="isPolicyPage">
+      <PolicySection :policy="profile.policy" />
+    </main>
+
+    <main v-else>
       <section class="paper-section hero-section">
         <div class="hero-grid">
           <img :src="profile.personal.profileImage" alt="Profile photo" class="profile-image" />
@@ -30,7 +34,6 @@
       <PatentsSection :patents="profile.patents" />
       <LifestyleSection :lifestyle="profile.lifestyle" />
       <ContactSection :contact="profile.contact" />
-      <SourcesSection :sources="profile.sources" />
     </main>
 
     <footer class="paper-footer">
@@ -41,13 +44,28 @@
 
 <script setup>
 import { useProfileData } from './composables/useProfileData';
+import { computed, onMounted, onUnmounted, ref } from 'vue';
 import AboutSection from './components/sections/AboutSection.vue';
 import ExperienceSection from './components/sections/ExperienceSection.vue';
 import PublicationsSection from './components/sections/PublicationsSection.vue';
 import PatentsSection from './components/sections/PatentsSection.vue';
 import ContactSection from './components/sections/ContactSection.vue';
-import SourcesSection from './components/sections/SourcesSection.vue';
 import LifestyleSection from './components/sections/LifestyleSection.vue';
+import PolicySection from './components/sections/PolicySection.vue';
 
 const profile = useProfileData();
+const currentHash = ref(window.location.hash);
+const isPolicyPage = computed(() => currentHash.value === '#policy');
+
+function syncHash() {
+  currentHash.value = window.location.hash;
+}
+
+onMounted(() => {
+  window.addEventListener('hashchange', syncHash);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('hashchange', syncHash);
+});
 </script>
