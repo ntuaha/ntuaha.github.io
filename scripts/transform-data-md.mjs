@@ -14,6 +14,7 @@ const REQUIRED_SECTIONS = [
   'publications',
   'patents',
   'lifestyle',
+  'policy',
   'contact',
   'navigation',
   'sources'
@@ -165,6 +166,7 @@ async function main() {
     publications: sections.publications,
     patents: sections.patents,
     lifestyle: sections.lifestyle,
+    policy: sections.policy,
     contact: sections.contact,
     navigation: sections.navigation,
     sources: sections.sources

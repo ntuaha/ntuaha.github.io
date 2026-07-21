@@ -13,7 +13,11 @@
       </nav>
     </header>
 
-    <main>
+    <main v-if="currentPage === 'policy'">
+      <PolicySection :policy="profile.policy" />
+    </main>
+
+    <main v-else>
       <section class="paper-section hero-section">
         <div class="hero-grid">
           <img :src="profile.personal.profileImage" alt="Profile photo" class="profile-image" />
@@ -51,6 +55,7 @@ import PatentsSection from './components/sections/PatentsSection.vue';
 import ContactSection from './components/sections/ContactSection.vue';
 import SourcesSection from './components/sections/SourcesSection.vue';
 import LifestyleSection from './components/sections/LifestyleSection.vue';
+import PolicySection from './components/sections/PolicySection.vue';
 import ShowcasePage from './components/ShowcasePage.vue';
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
 
@@ -69,5 +74,9 @@ onBeforeUnmount(() => {
   window.removeEventListener('hashchange', syncHash);
 });
 
-const currentPage = computed(() => (routeHash.value === '#showcase' ? 'showcase' : 'home'));
+const currentPage = computed(() => {
+  if (routeHash.value === '#showcase') return 'showcase';
+  if (routeHash.value === '#policy') return 'policy';
+  return 'home';
+});
 </script>
