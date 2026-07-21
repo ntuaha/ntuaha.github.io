@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Source+Code+Pro:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;600;700;800&family=Noto+Serif+TC:wght@400;600;700&family=Source+Code+Pro:wght@400;600&display=swap');
 
 :root {
   --paper-bg: #ffffff;
@@ -184,6 +184,9 @@ main {
   --showcase-image: none;
   --showcase-accent: #e50914;
   --showcase-focus: center;
+  --showcase-latin-font: 'Inter', Arial, sans-serif;
+  --showcase-cjk-font: 'Noto Serif TC', 'Noto Sans TC', 'Noto Sans JP', serif;
+  --showcase-ui-font: 'Inter', 'Noto Serif TC', 'Noto Sans TC', 'Noto Sans JP', sans-serif;
   height: 100vh;
   height: 100dvh;
   min-height: 620px;
@@ -194,7 +197,7 @@ main {
   grid-template-rows: auto minmax(0, 1fr) auto;
   color: #ffffff;
   background: #050505;
-  font-family: Arial, 'Noto Serif TC', sans-serif;
+  font-family: var(--showcase-cjk-font);
 }
 
 .showcase-page::before {
@@ -220,6 +223,7 @@ main {
 
 .showcase-topbar,
 .showcase-hero,
+.showcase-browser,
 .showcase-rail {
   position: relative;
   z-index: 1;
@@ -237,7 +241,7 @@ main {
   color: var(--showcase-accent);
   text-decoration: none;
   text-transform: uppercase;
-  font-family: Arial, sans-serif;
+  font-family: var(--showcase-latin-font);
   font-weight: 800;
   font-size: 1.8rem;
   letter-spacing: 0;
@@ -246,6 +250,7 @@ main {
 .showcase-nav {
   display: flex;
   gap: 1.1rem;
+  font-family: var(--showcase-ui-font);
 }
 
 .showcase-nav a {
@@ -269,7 +274,7 @@ main {
 .showcase-kicker {
   margin: 0 0 0.65rem;
   color: #e6e6e6;
-  font-family: Arial, sans-serif;
+  font-family: var(--showcase-ui-font);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -278,19 +283,20 @@ main {
 
 .showcase-hero h1 {
   margin: 0;
-  max-width: 13ch;
+  max-width: min(13ch, 92vw);
   color: #ffffff;
-  font-family: Arial, 'Noto Serif TC', sans-serif;
+  font-family: var(--showcase-cjk-font);
   font-size: clamp(2.2rem, 6vw, 5rem);
   line-height: 1;
   letter-spacing: 0;
   text-shadow: 0 0.18rem 1.2rem rgba(0, 0, 0, 0.62);
+  overflow-wrap: anywhere;
 }
 
 .showcase-meta {
   margin: 0.75rem 0 0;
   color: color-mix(in srgb, var(--showcase-accent) 72%, #ffffff);
-  font-family: Arial, sans-serif;
+  font-family: var(--showcase-ui-font);
   font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -301,6 +307,7 @@ main {
   margin: 0.8rem 0 0;
   max-width: 600px;
   color: rgba(255, 255, 255, 0.88);
+  font-family: var(--showcase-cjk-font);
   font-size: clamp(0.95rem, 1.55vw, 1.18rem);
   line-height: 1.55;
   display: -webkit-box;
@@ -320,7 +327,7 @@ main {
 
 .showcase-tags li {
   color: rgba(255, 255, 255, 0.86);
-  font-family: Arial, sans-serif;
+  font-family: var(--showcase-ui-font);
   font-size: 0.84rem;
   font-weight: 700;
 }
@@ -340,7 +347,7 @@ main {
   border-radius: 4px;
   color: #050505;
   background: #ffffff;
-  font-family: Arial, sans-serif;
+  font-family: var(--showcase-ui-font);
   font-size: 1rem;
   font-weight: 800;
   text-decoration: none;
@@ -351,6 +358,55 @@ main {
   background: rgba(255, 255, 255, 0.78);
 }
 
+.showcase-browser {
+  min-width: 0;
+}
+
+.showcase-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0 clamp(1.1rem, 4vw, 3.4rem);
+  font-family: var(--showcase-ui-font);
+}
+
+.showcase-topic {
+  min-height: 2.15rem;
+  padding: 0 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 4px;
+  color: rgba(255, 255, 255, 0.74);
+  background: rgba(255, 255, 255, 0.08);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.showcase-topic:hover,
+.showcase-topic:focus-visible,
+.showcase-topic.active {
+  border-color: color-mix(in srgb, var(--showcase-accent) 64%, #ffffff);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+  outline: none;
+}
+
+.showcase-row-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.65rem clamp(1.1rem, 4vw, 3.4rem) 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-family: var(--showcase-ui-font);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .showcase-rail {
   display: grid;
   grid-auto-flow: column;
@@ -358,14 +414,14 @@ main {
   gap: 0.8rem;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 0.8rem clamp(1.1rem, 4vw, 3.4rem) 1.35rem;
+  padding: 0.55rem clamp(1.1rem, 4vw, 3.4rem) 1.35rem;
   scrollbar-width: thin;
   overscroll-behavior-x: contain;
 }
 
 .showcase-card {
   display: grid;
-  grid-template-rows: auto 1rem 2.65rem;
+  grid-template-rows: auto 1rem 3.25rem;
   gap: 0.22rem;
   padding: 0;
   border: 0;
@@ -374,6 +430,7 @@ main {
   background: rgba(255, 255, 255, 0.1);
   cursor: pointer;
   text-align: left;
+  min-width: 0;
   transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
 }
 
@@ -388,12 +445,12 @@ main {
 .showcase-card-kind,
 .showcase-card-title {
   padding: 0 0.65rem;
-  font-family: Arial, 'Noto Serif TC', sans-serif;
 }
 
 .showcase-card-kind {
   align-self: end;
   color: color-mix(in srgb, var(--showcase-accent) 82%, #ffffff);
+  font-family: var(--showcase-ui-font);
   font-size: 0.68rem;
   font-weight: 800;
   line-height: 1;
@@ -402,11 +459,13 @@ main {
 
 .showcase-card-title {
   padding-bottom: 0.65rem;
-  font-size: 0.92rem;
+  font-family: var(--showcase-cjk-font);
+  font-size: clamp(0.78rem, 0.9vw, 0.92rem);
   font-weight: 700;
   line-height: 1.25;
   display: -webkit-box;
   overflow: hidden;
+  overflow-wrap: anywhere;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
@@ -473,13 +532,29 @@ main {
     -webkit-line-clamp: 3;
   }
 
+  .showcase-topics {
+    gap: 0.42rem;
+  }
+
+  .showcase-topic {
+    min-height: 2rem;
+    padding: 0 0.65rem;
+    font-size: 0.76rem;
+  }
+
+  .showcase-row-label {
+    padding-top: 0.5rem;
+    font-size: 0.7rem;
+  }
+
   .showcase-rail {
     grid-auto-columns: min(72vw, 280px);
+    padding-top: 0.45rem;
     padding-bottom: 0.95rem;
   }
 
   .showcase-card {
-    grid-template-rows: auto 1rem 2.4rem;
+    grid-template-rows: auto 1rem 3.25rem;
   }
 }
 
@@ -509,7 +584,7 @@ main {
 
   .showcase-rail {
     grid-auto-columns: clamp(164px, 15vw, 210px);
-    padding-top: 0.55rem;
+    padding-top: 0.45rem;
     padding-bottom: 0.9rem;
   }
 }
